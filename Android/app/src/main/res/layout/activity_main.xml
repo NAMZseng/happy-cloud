@@ -2,18 +2,36 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:gravity="center"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/whitebackground"
     tools:context=".MainActivity">
 
-    <ImageButton
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/ic_launcher"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_name"
+        android:textSize="26sp"/>
+
+    <Button
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="250dp"
-        android:background="@drawable/startbtn"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/startbtn"
+        android:text="Get Start!"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
 </LinearLayout>
