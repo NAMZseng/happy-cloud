@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:src="@drawable/ic_launcher"/>
 
     <TextView
@@ -23,15 +23,15 @@
         android:text="@string/app_name"
         android:textSize="26sp"/>
 
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/startbtn"
-        android:text="Get Start!"
-        android:textSize="18sp"
-        android:textColor="#ffffff"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/startBtn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="160dp"-->
+        <!--android:background="@drawable/startbtn"-->
+        <!--android:text="Get Start!"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textColor="#ffffff"-->
+        <!--/>-->
 </LinearLayout>

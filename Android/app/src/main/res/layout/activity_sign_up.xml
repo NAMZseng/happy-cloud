@@ -24,7 +24,7 @@
 
     <EditText
         android:id="@+id/emailSignupEt"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
@@ -33,7 +33,7 @@
 
     <EditText
         android:id="@+id/pwdSignupEt"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
@@ -43,7 +43,7 @@
 
     <EditText
         android:id="@+id/rePwdSingupEt"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="140dp"
         android:text="已经注册过账号？"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 </LinearLayout>
