@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/whitebackground"
-    tools:context=".SignUpActivity">
+    tools:context=".login.LogInActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -23,12 +23,12 @@
         android:textSize="26sp"/>
 
     <EditText
-        android:id="@+id/emailLoginEt"
+        android:id="@+id/phoLoginEt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:hint="邮箱"
+        android:hint="手机号"
         />
 
     <EditText
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="160dp"
-        android:text="注册新账号!"
+        android:layout_marginTop="130dp"
+        android:text="未注册？去创建"
         android:textSize="16sp"/>
 </LinearLayout>

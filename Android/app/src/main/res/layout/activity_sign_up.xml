@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/whitebackground"
-    tools:context=".SignUpActivity">
+    tools:context=".login.SignUpActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/ic_launcher"/>
 
     <TextView
@@ -23,13 +23,40 @@
         android:textSize="26dp"/>
 
     <EditText
-        android:id="@+id/emailSignupEt"
+        android:id="@+id/phoSignupEt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:hint="邮箱"
+        android:hint="手机号"
         />
+    <!--<TableLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--&gt;-->
+
+    <!--<TableRow>-->
+        <!--<EditText-->
+            <!--android:id="@+id/mesSignupEt"-->
+            <!--android:layout_width="192dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:hint="验证码"-->
+            <!--/>-->
+
+       <!--<Button-->
+           <!--android:id="@+id/getMesBtn"-->
+           <!--android:layout_width="wrap_content"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:text="获取验证码"-->
+           <!--android:textSize="16sp"-->
+           <!--android:textColor="#ffffff"-->
+           <!--/>-->
+    <!--</TableRow>-->
+
+    <!--</TableLayout>-->
+
 
     <EditText
         android:id="@+id/pwdSignupEt"
@@ -68,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="140dp"
-        android:text="已经注册过账号？"
+        android:layout_marginTop="120dp"
+        android:text="已注册？去登陆"
         android:textSize="16sp"/>
 </LinearLayout>

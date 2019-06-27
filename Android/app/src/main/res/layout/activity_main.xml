@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/whitebackground"
-    tools:context=".MainActivity">
+    tools:context=".login.MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -23,15 +23,4 @@
         android:text="@string/app_name"
         android:textSize="26sp"/>
 
-    <!--<Button-->
-        <!--android:id="@+id/startBtn"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:layout_marginTop="160dp"-->
-        <!--android:background="@drawable/startbtn"-->
-        <!--android:text="Get Start!"-->
-        <!--android:textSize="16sp"-->
-        <!--android:textColor="#ffffff"-->
-        <!--/>-->
 </LinearLayout>
