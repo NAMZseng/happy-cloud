@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.nam.android.happycloud.R;
+import com.nam.android.happycloud.start.MainContentActivity;
 
 /**
  * 用户登陆界面
@@ -46,7 +47,10 @@ public class LogInActivity extends Activity implements View.OnClickListener {
                 startActivity(intentForgetPwd);
                 break;
             case R.id.loginBtn:
-                // TODO 跳转主界面
+                // TODO 验证手机号与密码
+                // 跳转主界面
+                Intent intentFileList = new Intent(LogInActivity.this, MainContentActivity.class);
+                startActivity(intentFileList);
                 break;
             case R.id.signupTv:
                 Intent intentSignUp = new Intent(LogInActivity.this, SignUpActivity.class);

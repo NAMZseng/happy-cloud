@@ -4,35 +4,32 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
-    </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_activites"
+            android:icon="@drawable/activies"
+            android:title="动态" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/news"
+            android:title="通知" />
+        <item
+            android:id="@+id/nav_trashbin"
+            android:icon="@drawable/trashbin"
+            android:title="垃圾箱" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/seting"
+            android:title="设置" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="退出登录" />
+        <item
+            android:id="@+id/nav_unregister"
+            android:icon="@drawable/unregister"
+            android:title="注销账户" />
+
+    </group>
 
 </menu>

@@ -7,6 +7,7 @@ import android.os.Handler;
 
 import com.mob.MobSDK;
 import com.nam.android.happycloud.R;
+import com.nam.android.happycloud.start.MainContentActivity;
 
 import cn.smssdk.SMSSDK;
 
@@ -34,7 +35,7 @@ public class MainActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, LogInActivity.class);
                 startActivity(intent);
             }
         }, 1500);

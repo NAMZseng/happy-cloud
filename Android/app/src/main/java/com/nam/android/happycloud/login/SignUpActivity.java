@@ -3,9 +3,6 @@ package com.nam.android.happycloud.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,9 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nam.android.happycloud.R;
-
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
+import com.nam.android.happycloud.start.MainContentActivity;
 
 /**
  * 用户注册界面，注册成功后跳转至登陆界面
@@ -80,7 +75,9 @@ public class SignUpActivity extends Activity implements View.OnClickListener {
                     Toast.makeText(getApplicationContext(), "注册成功！",
                             Toast.LENGTH_LONG).show();
                     // TODO 存入用户信息到数据库
-                    // TODO 进入主界面
+                    // 跳转至主界面
+                    Intent intentFileList = new Intent(SignUpActivity.this, MainContentActivity.class);
+                    startActivity(intentFileList);
                 }
                 break;
             case R.id.loginTv:

@@ -1,6 +1,7 @@
 package com.nam.android.happycloud.login;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.nam.android.happycloud.R;
+import com.nam.android.happycloud.start.MainContentActivity;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
@@ -84,7 +86,9 @@ public class ForgetPwdActivity extends Activity implements View.OnClickListener 
                                 Toast.makeText(getApplicationContext(), "修改成功！",
                                         Toast.LENGTH_LONG).show();
                                 // TODO 更新用户信息到数据库
-                                // TODO 修改密码成功，进入主界面
+                                // 跳转主界面
+                                Intent intentFileList = new Intent(ForgetPwdActivity.this, MainContentActivity.class);
+                                startActivity(intentFileList);
                             } else {
                                 Toast.makeText(getApplicationContext(), "验证码错误，请重新获取",
                                         Toast.LENGTH_LONG).show();
