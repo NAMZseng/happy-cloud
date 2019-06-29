@@ -18,24 +18,35 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/account_circle_white" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Hello!"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <TextView
-        android:id="@+id/userPhone"
+    <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12345012345"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-       />
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:text="Hi,"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Friend"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"/>
+                />
+
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

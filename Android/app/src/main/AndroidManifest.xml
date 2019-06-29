@@ -25,16 +25,16 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".login.ForgetPwdActivity"
+            android:name=".login.ForgetPwdActivity_"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".login.LogInActivity"
+            android:name=".login.LogInActivity_"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".login.SignUpActivity"
+            android:name=".login.SignUpActivity_"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".login.MainActivity"
+            android:name=".login.MainActivity_"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

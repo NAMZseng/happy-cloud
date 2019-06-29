@@ -9,6 +9,8 @@ import com.mob.MobSDK;
 import com.nam.android.happycloud.R;
 import com.nam.android.happycloud.start.MainContentActivity;
 
+import org.androidannotations.annotations.EActivity;
+
 import cn.smssdk.SMSSDK;
 
 /**
@@ -16,6 +18,7 @@ import cn.smssdk.SMSSDK;
  * 同时完成应用相关全局库的初始化
  * @author nanrong zeng
  */
+@EActivity(R.layout.activity_main)
 public class MainActivity extends Activity {
 
     private Handler handler = null;
@@ -23,7 +26,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
         // 手机验证SDK
         MobSDK.init(this, "2b84e6d7bcecc", "d8319c87fe9d1361bc23d68e9a6ace19");
@@ -35,7 +38,7 @@ public class MainActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+                Intent intent = new Intent(MainActivity.this, LogInActivity_.class);
                 startActivity(intent);
             }
         }, 1500);

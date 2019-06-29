@@ -3,7 +3,6 @@ package com.nam.android.happycloud.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,53 +10,53 @@ import android.widget.TextView;
 import com.nam.android.happycloud.R;
 import com.nam.android.happycloud.start.MainContentActivity;
 
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
+
+
 /**
  * 用户登陆界面
  *
  * @author nanrong zeng
  */
-public class LogInActivity extends Activity implements View.OnClickListener {
-    private EditText phoLoginEt = null;
-    private EditText pwdLoginEt = null;
-    private TextView forgetPwdTv = null;
-    private Button loginBtn = null;
-    private TextView signupTv = null;
+@EActivity(R.layout.activity_log_in)
+public class LogInActivity extends Activity {
+    @ViewById
+    EditText phoLoginEt;
+    @ViewById
+    EditText pwdLoginEt;
+    @ViewById
+    TextView forgetPwdTv;
+    @ViewById
+    Button loginBtn;
+    @ViewById
+    TextView signupTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
-
-        phoLoginEt = findViewById(R.id.phoLoginEt);
-        pwdLoginEt = findViewById(R.id.pwdLoginEt);
-        forgetPwdTv = findViewById(R.id.forgetPwdTv);
-        loginBtn = findViewById(R.id.loginBtn);
-        signupTv = findViewById(R.id.signupTv);
-
-        forgetPwdTv.setOnClickListener(this);
-        loginBtn.setOnClickListener(this);
-        signupTv.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.forgetPwdTv:
-                Intent intentForgetPwd = new Intent(LogInActivity.this, ForgetPwdActivity.class);
-                startActivity(intentForgetPwd);
-                break;
-            case R.id.loginBtn:
-                // TODO 验证手机号与密码
-                // 跳转主界面
-                Intent intentFileList = new Intent(LogInActivity.this, MainContentActivity.class);
-                startActivity(intentFileList);
-                break;
-            case R.id.signupTv:
-                Intent intentSignUp = new Intent(LogInActivity.this, SignUpActivity.class);
-                startActivity(intentSignUp);
-                break;
-            default:
-                break;
-        }
+    @Click(R.id.forgetPwdTv)
+    public void gotoForgetPwd() {
+        Intent intentForgetPwd = new Intent(LogInActivity.this, ForgetPwdActivity_.class);
+        startActivity(intentForgetPwd);
     }
+
+    @Click(R.id.loginBtn)
+    public void gotoMainContent() {
+        // TODO 验证手机号与密码
+        // 跳转主界面
+        Intent intentFileList = new Intent(LogInActivity.this, MainContentActivity.class);
+        startActivity(intentFileList);
+    }
+
+    @Click(R.id.signupTv)
+    public void gotoSignUp() {
+        Intent intentSignUp = new Intent(LogInActivity.this, SignUpActivity_.class);
+        startActivity(intentSignUp);
+    }
+
 }

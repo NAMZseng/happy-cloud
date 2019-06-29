@@ -3,7 +3,6 @@ package com.nam.android.happycloud.start;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
@@ -19,7 +18,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Toast;
+
 import com.nam.android.happycloud.R;
+
+import org.androidannotations.annotations.EActivity;
 
 /**
  * 应用主界面，展示用户云盘中的文件
@@ -36,15 +47,15 @@ public class MainContentActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO 添加文件上传，创建文件夹对话框
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // TODO 添加文件上传，创建文件夹对话框
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -107,8 +118,6 @@ public class MainContentActivity extends AppCompatActivity
         if (id == R.id.action_refesh) {
             // TODO 刷新列表
             return true;
-        } else if (id == R.id.action_sort) {
-            // TODO 排序
         } else if (id == R.id.action_search) {
             // TODO 搜索
         }
@@ -122,7 +131,7 @@ public class MainContentActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_activites) {
+        if (id == R.id.nav_recently) {
             // TODO 显示用户传输文件动态，瀑布布局
 
         } else if (id == R.id.nav_news) {
