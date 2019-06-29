@@ -25,7 +25,8 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".setting.SettingActivity_"
+            android:name=".setting.SettingActivity"
+            android:label=""
             android:theme="@style/AppTheme" />
         <activity
             android:name=".login.ForgetPwdActivity_"

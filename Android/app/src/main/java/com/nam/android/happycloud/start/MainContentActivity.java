@@ -5,37 +5,23 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.SearchView;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
-
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Toast;
-
 import com.nam.android.happycloud.R;
 import com.nam.android.happycloud.login.LogInActivity_;
-import com.nam.android.happycloud.setting.SettingActivity_;
-
-import org.androidannotations.annotations.EActivity;
+import com.nam.android.happycloud.setting.SettingActivity;
 
 /**
  * 应用主界面，展示用户云盘中的文件
@@ -60,6 +46,7 @@ public class MainContentActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 // TODO 上传文件
+                Toast.makeText(getApplicationContext(), "上传文件", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -139,7 +126,7 @@ public class MainContentActivity extends AppCompatActivity
             // TODO 显示已删除文件
 
         } else if (id == R.id.nav_setting) {
-            Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity_.class);
+            Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity.class);
             startActivity(intentSetting);
 
         } else if (id == R.id.nav_logout) {
