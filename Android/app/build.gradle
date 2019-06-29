@@ -43,4 +43,6 @@ dependencies {
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
 
     implementation 'com.getbase:floatingactionbutton:1.10.1'
+    implementation 'com.leon:lsettingviewlibrary:1.7.0'
+
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:leon="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setting.SettingActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/settingToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/settingToolBarBackIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="设置"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.leon.lib.settingview.LSettingItem
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settingName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        leon:leftIcon="@drawable/setting_name"
+        leon:leftText="设置昵称"/>
+
+    <com.leon.lib.settingview.LSettingItem
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settingPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        leon:leftIcon="@drawable/setting_phone"
+        leon:leftText="修改手机号"/>
+
+    <com.leon.lib.settingview.LSettingItem
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settingPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        leon:leftIcon="@drawable/setting_pwd"
+        leon:leftText="修改密码"/>
+
+    <com.leon.lib.settingview.LSettingItem
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settingInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        leon:leftIcon="@drawable/setting_info"
+        leon:leftText="关于欢喜云盘"/>
+
+    <com.leon.lib.settingview.LSettingItem
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settingUnregist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        leon:leftIcon="@drawable/setting_unregist"
+        leon:leftText="注销账号"/>
+
+
+</LinearLayout>

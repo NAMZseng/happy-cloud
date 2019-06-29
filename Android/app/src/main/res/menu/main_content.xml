@@ -14,10 +14,4 @@
         android:title="搜索"
         app:showAsAction="always|collapseActionView" />
 
-    <item
-        android:id="@+id/action_refesh"
-        android:orderInCategory="100"
-        android:icon="@drawable/ic_sync"
-        android:title="刷新列表"
-        app:showAsAction="always" />
 </menu>

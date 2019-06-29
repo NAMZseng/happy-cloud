@@ -9,10 +9,7 @@
             android:id="@+id/nav_recently"
             android:icon="@drawable/recently"
             android:title="动态" />
-        <item
-            android:id="@+id/nav_news"
-            android:icon="@drawable/news"
-            android:title="通知" />
+       
         <item
             android:id="@+id/nav_trashbin"
             android:icon="@drawable/trashbin"
@@ -25,10 +22,6 @@
             android:id="@+id/nav_logout"
             android:icon="@drawable/nav_logout"
             android:title="退出登录" />
-        <item
-            android:id="@+id/nav_unregister"
-            android:icon="@drawable/logout"
-            android:title="注销账户" />
 
     </group>
 
