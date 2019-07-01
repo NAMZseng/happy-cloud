@@ -1,2 +1,2 @@
 # HappyCloud
-分布式云盘(Hadoop、Hbase、Dubbo、Zookeeper、SSM）
+分布式云盘Hadoop、SSM、PlayFramwork、Android）
