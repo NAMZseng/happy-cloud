@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        #{get 'moreStyles' /}
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}" />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
+        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}"></script>
+        <script src="@{'/public/javascripts/jquery.tools-1.2.5.toolbox.expose.min.js'}"></script>
+    </head>
+    <body id="admin">
+        <div id="header">
+            <div id="logo">
+                Welcome <span>${user}</span>
+            </div>
+            <ul id="tools">
+                <li>
+                    <a href="@{Secure.logout()}">Log out</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="main">
+        
+            <ul id="adminMenu">
+                    </li>
+                     #{secure.check 'Root'}
+                    <li class="${request.controller == 'user_infos' ? 'selected' : ''}">
+                        <a href="@{user_infos.list()}">用户信息</a>
+                    </li>
+                    <li class="${request.controller == 'user_download_files' ? 'selected' : ''}">
+                        <a href="@{user_download_files.list()}">用户文件下载记录</a>
+                    </li>
+                    <li class="${request.controller == 'user_share_files' ? 'selected' : ''}">
+                        <a href="@{user_share_files.list()}">用户文件分享记录</a>
+                    </li>
+                    <li>
+                         <a target="_blank" href="http://39.106.214.230:9870">HDFS</a>
+                    </li>
+                    
+                    #{/secure.check}
+            </ul>
+        </div>
+         #{doLayout /}
+        
+        <p id="footer">
+            HappyCloud Administor Page built with <a target="_blank" href="https://www.playframework.com/getting-started">Play
+			framework</a> By Nanrong_Zeng.
+        </p>
+    </body>
+</html>

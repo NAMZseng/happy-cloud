@@ -1,0 +1,22 @@
+# Test data
+
+Teacher(张建华):
+    schoolId:         T1001
+    passwd:          123
+    name:             张建华
+    
+Teacher(孟郊):
+    schoolId:         T1002
+    passwd:          123
+    name:             孟娇
+    
+Student(曾楠嵘):
+    schoolId:          S1607094250
+    passwd:          123
+    name:             曾楠嵘
+
+    
+Student(李四):
+    schoolId:          S1607094251
+    passwd:          123
+    name:             李四
