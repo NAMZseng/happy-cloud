@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.nam.android.happycloud.dao">
+    <!-- mybatis中的配置文件中的符号<=与sql中的相冲突，
+         使用![CDATA[ <= ]] 表明mybatis不用解析该<=
+         -->
+    <insert id="addUser">
+        INSERT INTO user_info(phone, password)
+        VALUES (#{phone}, #{password})
+    </insert>
+
+    <select id="findUser" resultType="User" parameterType="String">
+        SELECT user_id,
+        name,
+        phone,
+        password,
+        create_time
+        FROM user_info
+        WHERE phone = #{phone}
+    </select>
+
+    <update id="updateUserName">
+        UPDATE user_info
+        SET name = #{name}
+        WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateUserPhone">
+        UPDATE user_info
+        SET phone = #{phone}
+        WHERE oldPhone = #{oldPhone}
+    </update>
+
+    <update id="updateUserPwd">
+        UPDATE user_info
+        SET password = #{password}
+        WHERE phone = #{phone}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        DELETE FROM user_info
+        WHERE phone = #{phone}
+    </delete>
+
+</mapper>
