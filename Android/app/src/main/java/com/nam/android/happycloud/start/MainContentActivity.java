@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -42,7 +43,8 @@ public class MainContentActivity extends AppCompatActivity
         actionUploadFile = findViewById(R.id.actionUploadFile);
         actionNewFloder = findViewById(R.id.actionNewFloder);
 
-        actionUploadFile.setOnClickListener(new View.OnClickListener(){
+
+        actionUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO 上传文件
@@ -120,7 +122,7 @@ public class MainContentActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_recently) {
-            // TODO 显示用户传输文件动态，瀑布布局
+            // TODO 显示用户上传下载文件的类型图表，根据download_count
 
         } else if (id == R.id.nav_trashbin) {
             // TODO 显示已删除文件
