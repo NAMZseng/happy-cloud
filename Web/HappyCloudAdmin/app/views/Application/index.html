@@ -12,12 +12,32 @@
 </head>
 <body>
 	<div id="header">
-		<div id="logo">欢喜云盘.Admin</div>
+		<div id="logo">欢喜云盘 . Admin</div>
 		<ul id="tools">
 			<li><a href="@{User.index()}">Log in</a></li>
 		</ul>
 		<div id="title">
-			
+			<div>
+				欢喜云盘后台管理员界面，实现的功能如下：
+			</div>
+			<div>
+				------------------------------------------------------------------------------------
+			</div>
+			<div>
+				(1) 登录权限管理，管理员输入密码才可进行相关操作；
+			</div>
+			<div>
+				(2) 表操作，可对系统相关数据库表进行增删查改操作；
+			</div>
+			<div>
+				(3) 多种方式查询，对于user_info表，可通过user_id，name，phone进行用户查询，
+			</div>
+			<div>
+				 　      对于user_download/share_file表，可通过file_id，user_id进行记录查询；
+			</div>
+			<div>
+				(4) 提供Hadoop分布式文件系统(HDFS)控制页面的访问跳转；
+			</div>
 		</div>
 	</div>
 	<p id="footer">
