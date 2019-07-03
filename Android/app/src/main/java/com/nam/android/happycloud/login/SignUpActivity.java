@@ -74,9 +74,9 @@ public class SignUpActivity extends Activity {
                         Toast.makeText(getApplicationContext(), "注册成功！", Toast.LENGTH_LONG).show();// 跳转至主界面
 
                         Intent intentFileList = new Intent(SignUpActivity.this, MainContentActivity.class);
-                        intentFileList.putExtra("id", userInfo.getUserId());
+                        intentFileList.putExtra("userId", userInfo.getUserId());
                         intentFileList.putExtra("phone", userInfo.getPhone());
-                        intentFileList.putExtra("name", userInfo.getName());
+                        intentFileList.putExtra("userName", userInfo.getName());
                         intentFileList.putExtra("password", userInfo.getPassword());
 
                         startActivity(intentFileList);

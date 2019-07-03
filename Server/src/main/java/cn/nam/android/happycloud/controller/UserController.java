@@ -9,6 +9,7 @@ package cn.nam.android.happycloud.controller;
 
 import cn.nam.android.happycloud.dto.UserInfoDto;
 import cn.nam.android.happycloud.service.UserService;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,11 +28,12 @@ public class UserController {
      * @param password
      */
     @RequestMapping(value= "/regist")
-    public UserInfoDto regist(@RequestParam("phone") String phone,
+    public String regist(@RequestParam("phone") String phone,
                               @RequestParam("password") String password) {
 
-        return userService.register(phone, password);
+        UserInfoDto userInfoDto  = userService.register(phone, password);
+
+        Gson gson  = new Gson();
+        return gson.toJson(userInfoDto);
     }
-
-
 }

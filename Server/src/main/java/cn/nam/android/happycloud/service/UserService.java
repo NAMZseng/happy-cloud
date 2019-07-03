@@ -36,7 +36,6 @@ public class UserService {
                                     user2.getName(),
                                     user2.getPhone(),
                                     user2.getPassword(),
-                                    user2.getCreateTime(),
                                     user2.getId());
             } else {
                 // 注册失败
@@ -56,7 +55,6 @@ public class UserService {
                                     user.getName(),
                                     user.getPhone(),
                                     user.getPassword(),
-                                    user.getCreateTime(),
                                     user.getId());
         }
     }

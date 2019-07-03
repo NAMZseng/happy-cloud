@@ -4,6 +4,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.icu.util.EthiopicCalendar;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -34,6 +37,14 @@ public class MainContentActivity extends AppCompatActivity
 
     FloatingActionButton actionUploadFile = null;
     FloatingActionButton actionNewFloder = null;
+    TextView userNameTv = null;
+
+    Intent intent = getIntent();
+
+    int userid;
+    String phone;
+    String userName;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +53,13 @@ public class MainContentActivity extends AppCompatActivity
 
         actionUploadFile = findViewById(R.id.actionUploadFile);
         actionNewFloder = findViewById(R.id.actionNewFloder);
+        userNameTv = findViewById(R.id.userName);
 
+        userName = intent.getStringExtra("userName");
+        if (!"".equals(userName)) {
+            // 但用户定义昵称后，在侧滑界面显示昵称，否则显示默认的"Friend"
+            userNameTv.setText(intent.getStringExtra("name"));
+        }
 
         actionUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,9 +146,13 @@ public class MainContentActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_setting) {
 
-            // TODO 添加登录者的用户信息user_id到Intent中
-
             Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity.class);
+
+            intentSetting.putExtra("userId", userid);
+            intentSetting.putExtra("phone", phone);
+            intentSetting.putExtra("userName", userName);
+            intentSetting.putExtra("password", password);
+
             startActivity(intentSetting);
 
         } else if (id == R.id.nav_logout) {

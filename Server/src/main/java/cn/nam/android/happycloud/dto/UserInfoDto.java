@@ -1,6 +1,5 @@
 package cn.nam.android.happycloud.dto;
 
-import java.util.Date;
 
 /**
  * @author Nanrong Zeng
@@ -16,28 +15,18 @@ public class UserInfoDto {
     private String name;
     private String phone;
     private String password;
-    private Date createTime;
     private long id;
 
     public UserInfoDto(boolean state) {
         this.state = state;
     }
 
-    public UserInfoDto(boolean state, int userId, String name, String phone, String password, Date createTime, long id) {
+    public UserInfoDto(boolean state, int userId, String name, String phone, String password, long id) {
         this.state = state;
         this.userId = userId;
         this.name = name;
         this.phone = phone;
         this.password = password;
-        this.createTime = createTime;
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
         this.id = id;
     }
 
@@ -65,7 +54,7 @@ public class UserInfoDto {
         this.name = name;
     }
 
-    public String  getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -81,11 +70,11 @@ public class UserInfoDto {
         this.password = password;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public long getId() {
+        return id;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setId(long id) {
+        this.id = id;
     }
 }
