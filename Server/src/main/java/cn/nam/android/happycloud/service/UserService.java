@@ -1,71 +1,125 @@
 package cn.nam.android.happycloud.service;
 
-import cn.nam.android.happycloud.enums.UserLoginDto;
+
+import cn.nam.android.happycloud.dao.UserDao;
+import cn.nam.android.happycloud.entity.User;
+import cn.nam.android.happycloud.dto.UserInfoDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.math.BigInteger;
 
 /**
- *用户信息相关的服务接口
+ * 用户相关服务的实现类
  *
  * @author Nanrong Zeng
  * @version 1.0
  */
-public interface UserService {
+@Service
+public class UserService {
 
-    /**
-     * 根据手机号和密码注册新用户
-     *
-     * @param phone 用户手机号
-     * @param password 用户密码
-     * @return 1：注册成功，0：已被注册过，-1：注册失败
-     */
-    int register(String phone, String password);
+    @Autowired
+    private UserDao userDao;
 
-    /**
-     * 用户登录
-     *
-     * @param phone 用户手机号
-     * @param password 用户密码
-     * @return 根据手机号密码是否正确，返回相关Dto
-     */
-    UserLoginDto login(String phone, String password);
+    public UserInfoDto register(String phone, String password) {
+        User user = userDao.findUser(phone);
+        if ( user != null) {
+            // 已经注册
+            return new UserInfoDto(false);
+        } else {
+           long id = Long.parseLong(phone);
+            int flag = userDao.addUser(phone, password,id);
+            if (flag == 1) {
+                User user2 = userDao.findUser(phone);
+                return new UserInfoDto(true,
+                                    user2.getUserId(),
+                                    user2.getName(),
+                                    user2.getPhone(),
+                                    user2.getPassword(),
+                                    user2.getCreateTime(),
+                                    user2.getId());
+            } else {
+                // 注册失败
+                return new UserInfoDto(false);
+            }
+        }
+    }
 
-    /**
-     * 修改用户昵称
-     *
-     * @param userId 用户ID
-     * @param newName 新名称
-     * @return 更新成功返回true，否则返回false
-     */
-    boolean updateUserName(int userId, String newName);
+    public UserInfoDto login(String phone, String password) {
+        User user = userDao.findUser(phone);
+        if (user == null | !user.getPassword().equals(password)) {
+            // 信息错误, null表示手机号不匹配
+            return  new UserInfoDto(false);
+        } else {
+            return new UserInfoDto(true,
+                                    user.getUserId(),
+                                    user.getName(),
+                                    user.getPhone(),
+                                    user.getPassword(),
+                                    user.getCreateTime(),
+                                    user.getId());
+        }
+    }
 
-    /**
-     * 修改用户手机号
-     *
-     * @param password 密码
-     * @param oldPhone 现有手机号
-     * @param newPhone 新手机号
-     * @return  1：更新成功，0：信息错误，-1：更新失败
-     */
-    int updateUserPhone(String password,String oldPhone, String newPhone);
+    public boolean updateUserName(int userId, String newName) {
+        int flag = userDao.updateUserName(userId, newName);
+        if(flag == 1) {
+            // 更新成功
+            return true;
+        } else {
+            // 更新失败
+            return false;
+        }
+    }
 
-    /**
-     * 修改用户密码
-     *
-     * @param phone 手机号
-     * @param oldPassword 现有密码
-     * @param newPassword 新密码
-     * @return 1：更新成功，0：信息错误，-1：更新失败
-     */
-    int updateUserPwd(String phone, String oldPassword,String newPassword);
+    public int updateUserPhone(String password, String oldPhone, String newPhone) {
+        User user = userDao.findUser(oldPhone);
+        if (user == null | !user.getPassword().equals(password)){
+            // 信息错误
+            return 0;
+        } else {
+            int flag = userDao.updateUserPhone(oldPhone, newPhone);
+            if (flag == 1) {
+                // 更新成功
+                return 1;
+            } else {
+                // 更新失败
+                return -1;
+            }
+        }
+    }
 
-    /**
-     * 删除用户，注销
-     *
-     * // TODO 其他表中的数据也有一起删除
-     *
-     * @param phone 手机号
-     * @param password 密码
-     * @return 1：删除成功，0：信息错误，-1：删除失败
-     */
-    int deleteUser(String phone, String password);
+    public int updateUserPwd(String phone, String oldPassword, String newPassword) {
+        User user = userDao.findUser(phone);
+        if (user  == null | !user.getPassword().equals(oldPassword)) {
+            // 信息错误
+            return 0;
+        } else {
+            int flag = userDao.updateUserPwd(phone, newPassword);
+            if (flag == 1) {
+                // 更新成功
+                return 1;
+            } else {
+                // 更新失败
+                return -1;
+            }
+        }
+    }
 
+    public int deleteUser(String phone, String password) {
+        User user = userDao.findUser(phone);
+        if (user == null | !user.getPassword().equals(password)) {
+            // 信息错误
+            return 0;
+        } else {
+            int flag = userDao.deleteUser(phone);
+            if (flag == 1) {
+                // 更新成功
+                return 1;
+            } else {
+                // 更新失败
+                return -1;
+            }
+        }
+    }
 }

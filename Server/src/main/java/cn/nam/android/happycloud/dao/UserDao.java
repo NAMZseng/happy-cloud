@@ -16,9 +16,10 @@ public interface UserDao {
      *
      * @param phone      用户登录手机号
      * @param password   用户登录密码
+     * @param id
      * @return 更新成功返回1，否则返回0（即sql操作影响的行数）
      */
-    int addUser(@Param("phone") String phone, @Param("password") String password);
+    int addUser(@Param("phone") String phone, @Param("password") String password, @Param("id")Long id);
 
     /**
      * 查询手机号是否一注册

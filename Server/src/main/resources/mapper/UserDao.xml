@@ -3,13 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cn.nam.android.happycloud.dao">
+<mapper namespace="cn.nam.android.happycloud.dao.UserDao">
     <!-- mybatis中的配置文件中的符号<=与sql中的相冲突，
          使用![CDATA[ <= ]] 表明mybatis不用解析该<=
          -->
     <insert id="addUser">
-        INSERT INTO user_info(phone, password)
-        VALUES (#{phone}, #{password})
+        INSERT INTO user_info(phone, password, id)
+        VALUES (#{phone}, #{password}, #{id})
     </insert>
 
     <select id="findUser" resultType="User" parameterType="String">
@@ -17,7 +17,8 @@
         name,
         phone,
         password,
-        create_time
+        create_time,
+        id
         FROM user_info
         WHERE phone = #{phone}
     </select>

@@ -128,13 +128,16 @@ public class MainContentActivity extends AppCompatActivity
             // TODO 显示已删除文件
 
         } else if (id == R.id.nav_setting) {
+
+            // TODO 添加登录者的用户信息user_id到Intent中
+
             Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity.class);
             startActivity(intentSetting);
 
         } else if (id == R.id.nav_logout) {
             new AlertDialog.Builder(this).
                     setTitle("登出")
-                    .setMessage("确认退出登录？")
+                    .setMessage("确认退出？")
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -151,7 +154,6 @@ public class MainContentActivity extends AppCompatActivity
                     })
                     .create()
                     .show();
-
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

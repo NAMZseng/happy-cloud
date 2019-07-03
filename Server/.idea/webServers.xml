@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="6abb28d4-e4b9-4b08-958a-ac6d34e74418" name="ximaliyun" url="http://39.106.214.230">
-        <fileTransfer host="39.106.214.230" port="22" rootFolder="/home/admin/bigdata/tomcat" accessType="SFTP">
+        <fileTransfer host="39.106.214.230" port="22" rootFolder="/home/admin/bigdata/tomcat/webapps" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

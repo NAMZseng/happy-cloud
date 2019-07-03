@@ -1,20 +1,37 @@
-package cn.nam.android.happycloud.entity;
+package cn.nam.android.happycloud.dto;
 
 import java.util.Date;
 
 /**
- * 用户信息实体
- *
  * @author Nanrong Zeng
  * @version 1.0
  */
-public class User {
+public class UserInfoDto {
+
+    /**
+     * 用户状态，包括登录时手机号密码是否正确，注册时手机号是否已经注册
+     */
+    private boolean state;
     private int userId;
     private String name;
     private String phone;
     private String password;
     private Date createTime;
     private long id;
+
+    public UserInfoDto(boolean state) {
+        this.state = state;
+    }
+
+    public UserInfoDto(boolean state, int userId, String name, String phone, String password, Date createTime, long id) {
+        this.state = state;
+        this.userId = userId;
+        this.name = name;
+        this.phone = phone;
+        this.password = password;
+        this.createTime = createTime;
+        this.id = id;
+    }
 
     public long getId() {
         return id;
@@ -24,16 +41,12 @@ public class User {
         this.id = id;
     }
 
+    public boolean isState() {
+        return state;
+    }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "UserId=" + userId +
-                ", name='" + name + '\'' +
-                ", phone=" + phone +
-                ", password=" + password +
-                ", createTime=" + createTime +
-                '}';
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     public int getUserId() {
@@ -52,7 +65,7 @@ public class User {
         this.name = name;
     }
 
-    public String getPhone() {
+    public String  getPhone() {
         return phone;
     }
 
@@ -75,6 +88,4 @@ public class User {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-
-
 }
