@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/settingOldPhoneItm"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="原有手机号"
+            android:singleLine="true" >
+            <requestFocus />
+        </EditText>
+
+        <!--<requestFocus />标签
+        当点击tab或enter键时焦点自动进入下一个输入框-->
+
+        <EditText
+            android:id="@+id/settingPhonePwdItm"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:hint="登录密码"
+            android:singleLine="true" >
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/settingNewPhoneItm"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:hint="新手机号"
+            android:singleLine="true" >
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+</LinearLayout>
