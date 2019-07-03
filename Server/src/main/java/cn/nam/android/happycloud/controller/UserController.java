@@ -27,13 +27,33 @@ public class UserController {
      * @param phone
      * @param password
      */
-    @RequestMapping(value= "/regist")
-    public String regist(@RequestParam("phone") String phone,
+    @RequestMapping(value= "/signup")
+    public String signUp(@RequestParam("phone") String phone,
                               @RequestParam("password") String password) {
 
-        UserInfoDto userInfoDto  = userService.register(phone, password);
+        UserInfoDto userInfoDto  = userService.signUp(phone, password);
 
         Gson gson  = new Gson();
         return gson.toJson(userInfoDto);
+    }
+
+    @RequestMapping(value = "/login")
+    public String logIn(@RequestParam("phone") String phone,
+                         @RequestParam("password") String password) {
+
+        UserInfoDto userInfoDto = userService.logIn(phone, password);
+
+        Gson gson = new Gson();
+        return gson.toJson(userInfoDto);
+    }
+
+    @RequestMapping(value = "/updatename")
+    public String updateUserName(@RequestParam("userId") int userId,
+                                 @RequestParam("newName") String newName) {
+
+        boolean result = userService.updateUserName(userId, newName);
+
+        Gson gson = new Gson();
+        return gson.toJson(result);
     }
 }

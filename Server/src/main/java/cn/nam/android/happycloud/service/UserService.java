@@ -21,11 +21,12 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public UserInfoDto register(String phone, String password) {
+    public UserInfoDto signUp(String phone, String password) {
         User user = userDao.findUser(phone);
+
         if ( user != null) {
             // 已经注册
-            return new UserInfoDto(false);
+            return new UserInfoDto(false, -1, "-1", "-1", "-1", -1);
         } else {
            long id = Long.parseLong(phone);
             int flag = userDao.addUser(phone, password,id);
@@ -39,16 +40,17 @@ public class UserService {
                                     user2.getId());
             } else {
                 // 注册失败
-                return new UserInfoDto(false);
+                return new UserInfoDto(false, -1, "-1", "-1", "-1", -1);
             }
         }
     }
 
-    public UserInfoDto login(String phone, String password) {
+    public UserInfoDto logIn(String phone, String password) {
         User user = userDao.findUser(phone);
+
         if (user == null | !user.getPassword().equals(password)) {
             // 信息错误, null表示手机号不匹配
-            return  new UserInfoDto(false);
+            return  new UserInfoDto(false, -1, "-1", "-1", "-1", -1);
         } else {
             return new UserInfoDto(true,
                                     user.getUserId(),
@@ -104,7 +106,7 @@ public class UserService {
         }
     }
 
-    public int deleteUser(String phone, String password) {
+    public int signOut(String phone, String password) {
         User user = userDao.findUser(phone);
         if (user == null | !user.getPassword().equals(password)) {
             // 信息错误

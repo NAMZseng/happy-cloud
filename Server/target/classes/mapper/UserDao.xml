@@ -9,7 +9,7 @@
          -->
     <insert id="addUser">
         INSERT INTO user_info(phone, password, id)
-        VALUES (#{phone}, #{password}, #{id})
+        VALUES (#{phone}, #{password}, #{id  })
     </insert>
 
     <select id="findUser" resultType="User" parameterType="String">

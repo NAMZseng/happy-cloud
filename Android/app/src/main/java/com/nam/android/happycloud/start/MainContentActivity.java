@@ -15,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,16 +36,18 @@ import com.nam.android.happycloud.setting.SettingActivity;
 public class MainContentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton actionUploadFile = null;
-    FloatingActionButton actionNewFloder = null;
-    TextView userNameTv = null;
+    private static final String TAG = MainContentActivity.class.getSimpleName();
 
-    Intent intent = getIntent();
+    private FloatingActionButton actionUploadFile = null;
+    private FloatingActionButton actionNewFloder = null;
+    private TextView userNameTv = null;
 
-    int userid;
-    String phone;
-    String userName;
-    String password;
+    private int userId;
+    private String phone;
+    private String userName;
+    private String password;
+
+    final Intent intent = getIntent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,17 +59,17 @@ public class MainContentActivity extends AppCompatActivity
         userNameTv = findViewById(R.id.userName);
 
         userName = intent.getStringExtra("userName");
-        if (!"".equals(userName)) {
-            // 但用户定义昵称后，在侧滑界面显示昵称，否则显示默认的"Friend"
-            userNameTv.setText(intent.getStringExtra("name"));
-        }
+
+        Log.i(TAG, "userName: " + userName);
+
+        // 但用户定义昵称后，在侧滑界面显示昵称，否则显示默认的"Friend"
+//        userNameTv.setText(userName);
 
         actionUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO 上传文件
                 Toast.makeText(getApplicationContext(), "上传文件", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -145,10 +148,10 @@ public class MainContentActivity extends AppCompatActivity
             // TODO 显示已删除文件
 
         } else if (id == R.id.nav_setting) {
-
+            // 跳转至设置界面
             Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity.class);
 
-            intentSetting.putExtra("userId", userid);
+            intentSetting.putExtra("userId", userId);
             intentSetting.putExtra("phone", phone);
             intentSetting.putExtra("userName", userName);
             intentSetting.putExtra("password", password);
@@ -156,6 +159,7 @@ public class MainContentActivity extends AppCompatActivity
             startActivity(intentSetting);
 
         } else if (id == R.id.nav_logout) {
+            // 弹出确认登出对话框
             new AlertDialog.Builder(this).
                     setTitle("登出")
                     .setMessage("确认退出？")

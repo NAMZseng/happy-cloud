@@ -2,10 +2,9 @@ create database happycloud;
 use happycloud;
 
 -- 用户信息表
-
 create table user_info(
   `user_id` bigint not null auto_increment comment '用户ID',
-  `name` varchar(64) comment '用户昵称',
+  `name` varchar(64) default 'friend' comment '用户昵称',
   `phone` varchar(20) not null comment '用户登录手机号',
   `password` varchar(64) not null comment '用户登录密码',
   `create_time` timestamp not null default current_timestamp comment '用户创建时间',
