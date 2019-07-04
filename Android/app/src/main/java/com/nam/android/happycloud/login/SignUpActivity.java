@@ -48,7 +48,7 @@ public class SignUpActivity extends Activity {
 
             if (msg.what == MsgWhat.SIGNUP) {
                 UserInfoDto userInfo = (UserInfoDto) msg.obj;
-                if (userInfo.isState() == false) {
+                if (!userInfo.isState()) {
                     // 手机号重复，或注册失败
                     Toast.makeText(getApplicationContext(), "该手机号已经注册", Toast.LENGTH_LONG).show();
                     phoSignupEt.setText("");

@@ -17,10 +17,6 @@ public class UserInfoDto {
     private String password;
     private long id;
 
-    public UserInfoDto(boolean state) {
-        this.state = state;
-    }
-
     public UserInfoDto(boolean state, int userId, String name, String phone, String password, long id) {
         this.state = state;
         this.userId = userId;

@@ -48,7 +48,7 @@ public class LogInActivity extends Activity {
 
             if (msg.what == MsgWhat.LOGIN) {
                 UserInfoDto userInfoDto = (UserInfoDto) msg.obj;
-                if (userInfoDto.isState() == false) {
+                if (!userInfoDto.isState()) {
                     Toast.makeText(getApplicationContext(), "手机号或密码错误！", Toast.LENGTH_LONG).show();
                     phoLoginEt.setText("");
                     pwdLoginEt.setText("");
