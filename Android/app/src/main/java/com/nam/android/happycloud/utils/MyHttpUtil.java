@@ -92,7 +92,6 @@ public class MyHttpUtil {
         });
     }
 
-
     public static void updateNamePost(int userId, String newName, final Handler handler) {
 
         OkHttpClient client = new OkHttpClient();
@@ -127,5 +126,73 @@ public class MyHttpUtil {
 
     }
 
+    public static void updatePwdPost(String phone, String oldPassword, String newPassword, final Handler handler) {
+
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody requestBody = new FormBody.Builder()
+                .add("phone", phone)
+                .add("oldPassword", oldPassword)
+                .add("newPassword", newPassword)
+                .build();
+
+        final Request request = new Request.Builder()
+                .url(WebUrl.UPDATEPWD)
+                .post(requestBody)
+                .build();
+
+        // 处理Post返回信息
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Gson gson = new Gson();
+                OperateInfoDto operateInfoDto = gson.fromJson(response.body().string(), OperateInfoDto.class);
+                Message message = new Message();
+                message.what = MsgWhat.UPDATEPWD;
+                message.obj = operateInfoDto;
+                handler.sendMessage(message);
+            }
+        });
+
+    }
+
+    public static void signOutPost(String phone, String password, final Handler handler) {
+
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody requestBody = new FormBody.Builder()
+                .add("phone", phone)
+                .add("password", password)
+                .build();
+
+        final Request request = new Request.Builder()
+                .url(WebUrl.SIGNOUT)
+                .post(requestBody)
+                .build();
+
+        // 处理Post返回信息
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Gson gson = new Gson();
+                OperateInfoDto operateInfoDto = gson.fromJson(response.body().string(), OperateInfoDto.class);
+                Message message = new Message();
+                message.what = MsgWhat.SIGNOUT;
+                message.obj = operateInfoDto;
+                handler.sendMessage(message);
+            }
+        });
+
+    }
 
 }

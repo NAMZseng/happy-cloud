@@ -7,64 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f09f743-ed85-477f-8824-bc72d1480af5" name="Default Changelist" comment="统一url">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/happycloud_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/dto/UserInfoDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-controller.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/dao/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/dto/UserInfoDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/mapper/UserDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-controller.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/c3p0-0.9.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/gson-2.8.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-annotations-2.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-core-2.8.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-databind-2.8.11.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/json-20180813.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/logback-classic-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/logback-core-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mybatis-3.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mybatis-spring-1.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mysql-connector-java-5.1.38.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/slf4j-api-1.7.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-aop-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-beans-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-context-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-core-4.3.23.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-expression-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-jdbc-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-test-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-tx-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-web-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-webmvc-4.1.7.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/standard-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/happycloud/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/cn/nam/android/happycloud/dao/UserDaoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/enums/WebUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/enums/WebUrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/LogInActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/LogInActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/SignUpActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/setting/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/setting/SettingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/start/MainContentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/start/MainContentActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/utils/MyHttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/utils/MyHttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/res/layout/update_phone_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/res/layout/update_phone_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Web/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/log/test.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -113,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="270">
+              <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-645">
-              <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+            <state relative-caret-position="300">
+              <caret line="134" column="21" lean-forward="true" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2049#2050#0" expanded="true" />
@@ -248,7 +197,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1050" />
@@ -609,7 +558,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -626,7 +575,7 @@
       <window_info anchor="bottom" id="Database Console" order="6" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49932975" weight="0.47391304" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.49932975" visible="true" weight="0.47391304" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -834,18 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-645">
-          <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#2111#2112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/OperateInfoDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -860,10 +797,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="134" column="21" lean-forward="true" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="270">
+          <caret line="81" column="30" lean-forward="true" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

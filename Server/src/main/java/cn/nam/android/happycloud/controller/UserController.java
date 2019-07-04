@@ -7,6 +7,7 @@ package cn.nam.android.happycloud.controller;
  * @version 1.0
  */
 
+import cn.nam.android.happycloud.dto.OperateInfoDto;
 import cn.nam.android.happycloud.dto.UserInfoDto;
 import cn.nam.android.happycloud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,20 +43,43 @@ public class UserController {
         return userService.logIn(phone, password);
     }
 
-//    @RequestMapping(value = "/updatename")
-//    public OperateInfoDto updateUserName(@RequestParam("userId") int userId,
-//                                         @RequestParam("newName") String newName) {
-//
-//        int result = userService.updateUserName(userId, newName);
-//
-//        OperateInfoDto operateInfoDto = new OperateInfoDto(result+"");
-//        return operateInfoDto;
-//    }
-
     @RequestMapping(value = "/updatename")
-    public int updateUserName(@RequestParam("userId") int userId,
-                              @RequestParam("newName") String newName) {
+    public OperateInfoDto updateUserName(@RequestParam("userId") int userId,
+                                         @RequestParam("newName") String newName) {
 
-        return userService.updateUserName(userId, newName);
+        int result = userService.updateUserName(userId, newName);
+        OperateInfoDto operateInfoDto = new OperateInfoDto(result + "");
+        return operateInfoDto;
     }
+
+    @RequestMapping(value = "/updatephone")
+    public OperateInfoDto updatePhone(@RequestParam("password") String password,
+                                      @RequestParam("oldPhone") String oldPhone,
+                                      @RequestParam("newPhone") String newPhone) {
+
+        int result = userService.updateUserPhone(password, oldPhone, newPhone);
+        OperateInfoDto operateInfoDto = new OperateInfoDto(result + "");
+        return operateInfoDto;
+    }
+
+    @RequestMapping(value = "/updatepwd")
+    public OperateInfoDto updatePwd(@RequestParam("phone") String phone,
+                                    @RequestParam("oldPassword") String oldPassword,
+                                    @RequestParam("newPassword") String newPassword) {
+
+        int result = userService.updateUserPwd(phone, oldPassword, newPassword);
+        OperateInfoDto operateInfoDto = new OperateInfoDto(result + "");
+        return operateInfoDto;
+    }
+
+
+    @RequestMapping(value = "/signout")
+    public OperateInfoDto signOut(@RequestParam("phone") String phone,
+                                  @RequestParam("password") String password) {
+
+        int result = userService.signOut(phone, password);
+        OperateInfoDto operateInfoDto = new OperateInfoDto(result + "");
+        return operateInfoDto;
+    }
+
 }

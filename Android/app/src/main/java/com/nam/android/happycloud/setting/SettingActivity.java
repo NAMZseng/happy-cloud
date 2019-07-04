@@ -43,10 +43,11 @@ public class SettingActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+            OperateInfoDto updateResult = (OperateInfoDto) msg.obj;
+
             switch (msg.what) {
                 case MsgWhat.UPDATENAME:
                     // 设置昵称
-                    OperateInfoDto updateResult = (OperateInfoDto) msg.obj;
                     if (updateResult.getState().equals("1")) {
                         Toast.makeText(getApplicationContext(), "昵称设置成功！", Toast.LENGTH_LONG).show();
                     } else {
@@ -54,17 +55,32 @@ public class SettingActivity extends AppCompatActivity {
                     }
                     break;
                 case MsgWhat.UPDATEPHONE:
-                    // 修改手机号
+                    // TODO 修改手机号
                     break;
                 case MsgWhat.UPDATEPWD:
                     // 修改密码
+                    if (updateResult.getState().equals("1")) {
+                        Toast.makeText(getApplicationContext(), "密码修改成功！请重新登录", Toast.LENGTH_LONG).show();
+
+                        Intent intentLogIn = new Intent(SettingActivity.this, LogInActivity_.class);
+                        startActivity(intentLogIn);
+                    } else if (updateResult.getState().equals("-1")) {
+                        Toast.makeText(getApplicationContext(), "密码错误！", Toast.LENGTH_LONG).show();
+                    }
                     break;
                 case MsgWhat.SIGNOUT:
                     // 注销账号
+                    if (updateResult.getState().equals("1")) {
+                        Toast.makeText(getApplicationContext(), "注销成功！期待您的再次使用", Toast.LENGTH_LONG).show();
+
+                        Intent intentSigIn = new Intent(SettingActivity.this, SignUpActivity_.class);
+                        startActivity(intentSigIn);
+                    } else if (updateResult.getState().equals("-1")) {
+                        Toast.makeText(getApplicationContext(), "账号验证错误！", Toast.LENGTH_LONG).show();
+                    }
                     break;
                 default:
                     break;
-
             }
         }
     };
@@ -116,7 +132,6 @@ public class SettingActivity extends AppCompatActivity {
                 final EditText nameEt = view.findViewById(R.id.settingNameItm);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
-
                 builder.setTitle("设置昵称");
                 builder.setView(view);
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -124,7 +139,6 @@ public class SettingActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         String newName = nameEt.getText().toString().trim();
-                        userId = Integer.parseInt(intent.getStringExtra("userId"));
 
                         MyHttpUtil.updateNamePost(userId, newName, settingHandler);
                     }
@@ -146,22 +160,18 @@ public class SettingActivity extends AppCompatActivity {
                 View view = LayoutInflater.from(SettingActivity.this)
                         .inflate(R.layout.update_phone_item, null);
 
-                final EditText oldPhoneEt = findViewById(R.id.settingOldPhoneItm);
-                final EditText PhoPasswordEt = findViewById(R.id.settingPhonePwdItm);
-                final EditText newPhoneEt = findViewById(R.id.settingNewPhoneItm);
+                final EditText oldPhoneEt = view.findViewById(R.id.settingOldPhoneItm);
+                final EditText PhoPasswordEt = view.findViewById(R.id.settingPhonePwdItm);
+                final EditText newPhoneEt = view.findViewById(R.id.settingNewPhoneItm);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
                 builder.setTitle("修改手机号");
                 builder.setView(view);
-
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         // TODO POST修改手机操作到服务端
-
-                        Intent rePhoneIntent = new Intent(SettingActivity.this, LogInActivity_.class);
-                        startActivity(rePhoneIntent);
                     }
                 });
                 builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -177,7 +187,44 @@ public class SettingActivity extends AppCompatActivity {
         settingPwd.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
             public void click(boolean isChecked) {
-                // TODO POST修改密码操作到服务端
+
+                View view = LayoutInflater.from(SettingActivity.this)
+                        .inflate(R.layout.update_pwd_item, null);
+
+                final EditText oldPwdEt = view.findViewById(R.id.settingPwdPhoneItm);
+                final EditText newPwdEt = view.findViewById(R.id.settingNewPwdItm);
+                final EditText reNewPwdEt = view.findViewById(R.id.settingReNewPwdItm);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+                builder.setTitle("修改密码");
+                builder.setView(view);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String oldPwd = oldPwdEt.getText().toString().trim();
+                        String newPwd = newPwdEt.getText().toString().trim();
+                        String reNewPwd = reNewPwdEt.getText().toString().trim();
+
+                        if("".equals(newPwd)){
+                            Toast.makeText(getApplicationContext(), "密码不能为空！", Toast.LENGTH_SHORT).show();
+                        } else if (!newPwd.equals(reNewPwd)) {
+                            Toast.makeText(getApplicationContext(), "两次密码不一致，请重新输入！", Toast.LENGTH_SHORT).show();
+                            newPwdEt.setText("");
+                            reNewPwdEt.setText("");
+                        } else {
+                            // Post修改密码请求
+                            MyHttpUtil.updatePwdPost(phone, oldPwd, newPwd, settingHandler);
+                        }
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.create();
+                builder.show();
             }
         });
 
@@ -206,26 +253,32 @@ public class SettingActivity extends AppCompatActivity {
         settingUnregist.setmOnLSettingItemClick(new LSettingItem.OnLSettingItemClick() {
             @Override
             public void click(boolean isChecked) {
-                new AlertDialog.Builder(SettingActivity.this).
-                        setTitle("注销")
-                        .setMessage("确认注销账号？")
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        })
-                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // TODO POST注销操作到服务端
+                View view = LayoutInflater.from(SettingActivity.this)
+                        .inflate(R.layout.signout_item, null);
 
-                                // 返回注册界面
-                                Intent intentLogin = new Intent(SettingActivity.this, SignUpActivity_.class);
-                                startActivity(intentLogin);
+                final EditText phoneEt = view.findViewById(R.id.settingSignOutPhoneItm);
+                final EditText pwdEt = view.findViewById(R.id.settingSignOutPwdItm);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+                        builder.setTitle("注销");
+                        builder.setMessage("验证登录信息");
+                        builder.setView(view);
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {}
+                        });
+                        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                String signPhone = phoneEt.getText().toString().trim();
+                                String signPwd = pwdEt.getText().toString().trim();
+
+                                MyHttpUtil.signOutPost(signPhone, signPwd, settingHandler);
                             }
-                        })
-                        .create()
-                        .show();
+                        });
+                        builder.create();
+                        builder.show();
             }
         });
     }

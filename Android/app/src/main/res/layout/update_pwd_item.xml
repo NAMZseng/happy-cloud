@@ -9,40 +9,39 @@
         android:layout_height="wrap_content" >
 
         <EditText
-            android:id="@+id/settingOldPhoneItm"
+            android:id="@+id/settingPwdPhoneItm"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="原有手机号"
+            android:hint="现密码"
+            android:inputType="textPassword"
             android:singleLine="true" >
             <requestFocus />
         </EditText>
 
-        <!--<requestFocus />标签
-        当点击tab或enter键时焦点自动进入下一个输入框-->
-
         <EditText
-            android:id="@+id/settingPhonePwdItm"
+            android:id="@+id/settingNewPwdItm"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="90dp"
-            android:hint="登录密码"
+            android:hint="新密码"
             android:inputType="textPassword"
             android:singleLine="true" >
         </EditText>
 
         <EditText
-            android:id="@+id/settingNewPhoneItm"
+            android:id="@+id/settingReNewPwdItm"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="150dp"
-            android:hint="新手机号"
+            android:hint="确认密码"
+            android:inputType="textPassword"
             android:singleLine="true" >
         </EditText>
 
