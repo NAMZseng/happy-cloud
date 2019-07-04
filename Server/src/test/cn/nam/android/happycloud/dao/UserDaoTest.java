@@ -26,7 +26,7 @@ public class UserDaoTest {
     @Test
     public void addUserTest(){
 
-        UserInfoDto userInfoDto = userService.register("15074798636", "123");
+        UserInfoDto userInfoDto = userService.signUp("15074798636", "123");
         Gson gson  = new Gson();
 
         System.out.println(gson.toJson(userInfoDto));

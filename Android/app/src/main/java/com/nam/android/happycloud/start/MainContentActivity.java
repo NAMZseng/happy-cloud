@@ -36,7 +36,7 @@ import com.nam.android.happycloud.setting.SettingActivity;
 public class MainContentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = MainContentActivity.class.getSimpleName();
+    private static final String TAG = "MyLog";
 
     private FloatingActionButton actionUploadFile = null;
     private FloatingActionButton actionNewFloder = null;
@@ -47,7 +47,7 @@ public class MainContentActivity extends AppCompatActivity
     private String userName;
     private String password;
 
-    final Intent intent = getIntent();
+    private Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +56,12 @@ public class MainContentActivity extends AppCompatActivity
 
         actionUploadFile = findViewById(R.id.actionUploadFile);
         actionNewFloder = findViewById(R.id.actionNewFloder);
-        userNameTv = findViewById(R.id.userName);
 
+        intent = getIntent();
+        userId = Integer.valueOf(intent.getStringExtra("userId"));
+        phone = intent.getStringExtra("phone");
         userName = intent.getStringExtra("userName");
-
-        Log.i(TAG, "userName: " + userName);
-
-        // 但用户定义昵称后，在侧滑界面显示昵称，否则显示默认的"Friend"
-//        userNameTv.setText(userName);
+        password = intent.getStringExtra("password");
 
         actionUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,11 +84,18 @@ public class MainContentActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        userNameTv = headerView.findViewById(R.id.userName);
+        userNameTv.setText(String.valueOf(userName));
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
+
         toggle.syncState();
+
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -151,7 +156,7 @@ public class MainContentActivity extends AppCompatActivity
             // 跳转至设置界面
             Intent intentSetting = new Intent(MainContentActivity.this, SettingActivity.class);
 
-            intentSetting.putExtra("userId", userId);
+            intentSetting.putExtra("userId", String.valueOf(userId));
             intentSetting.putExtra("phone", phone);
             intentSetting.putExtra("userName", userName);
             intentSetting.putExtra("password", password);

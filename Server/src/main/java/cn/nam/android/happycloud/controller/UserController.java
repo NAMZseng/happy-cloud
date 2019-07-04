@@ -9,9 +9,10 @@ package cn.nam.android.happycloud.controller;
 
 import cn.nam.android.happycloud.dto.UserInfoDto;
 import cn.nam.android.happycloud.service.UserService;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/happycloud")
@@ -27,33 +28,34 @@ public class UserController {
      * @param phone
      * @param password
      */
-    @RequestMapping(value= "/signup")
-    public String signUp(@RequestParam("phone") String phone,
+    @RequestMapping(value = "/signup")
+    public UserInfoDto signUp(@RequestParam("phone") String phone,
                               @RequestParam("password") String password) {
 
-        UserInfoDto userInfoDto  = userService.signUp(phone, password);
-
-        Gson gson  = new Gson();
-        return gson.toJson(userInfoDto);
+        return userService.signUp(phone, password);
     }
 
     @RequestMapping(value = "/login")
-    public String logIn(@RequestParam("phone") String phone,
-                         @RequestParam("password") String password) {
+    public UserInfoDto logIn(@RequestParam("phone") String phone,
+                             @RequestParam("password") String password) {
 
-        UserInfoDto userInfoDto = userService.logIn(phone, password);
-
-        Gson gson = new Gson();
-        return gson.toJson(userInfoDto);
+        return userService.logIn(phone, password);
     }
 
+//    @RequestMapping(value = "/updatename")
+//    public OperateInfoDto updateUserName(@RequestParam("userId") int userId,
+//                                         @RequestParam("newName") String newName) {
+//
+//        int result = userService.updateUserName(userId, newName);
+//
+//        OperateInfoDto operateInfoDto = new OperateInfoDto(result+"");
+//        return operateInfoDto;
+//    }
+
     @RequestMapping(value = "/updatename")
-    public String updateUserName(@RequestParam("userId") int userId,
-                                 @RequestParam("newName") String newName) {
+    public int updateUserName(@RequestParam("userId") int userId,
+                              @RequestParam("newName") String newName) {
 
-        boolean result = userService.updateUserName(userId, newName);
-
-        Gson gson = new Gson();
-        return gson.toJson(result);
+        return userService.updateUserName(userId, newName);
     }
 }

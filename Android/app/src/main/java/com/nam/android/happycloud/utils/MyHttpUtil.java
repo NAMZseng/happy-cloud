@@ -2,8 +2,10 @@ package com.nam.android.happycloud.utils;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.google.gson.Gson;
+import com.nam.android.happycloud.entity.OperateInfoDto;
 import com.nam.android.happycloud.entity.UserInfoDto;
 import com.nam.android.happycloud.enums.MsgWhat;
 import com.nam.android.happycloud.enums.WebUrl;
@@ -24,7 +26,9 @@ import okhttp3.Response;
  */
 public class MyHttpUtil {
 
-    public  void signUpPost(String phone, String password, final Handler handler) {
+    private static final String TAG = "MyLog";
+
+    public static void signUpPost(String phone, String password, final Handler handler) {
         OkHttpClient client = new OkHttpClient();
 
         RequestBody requestBody = new FormBody.Builder()
@@ -56,7 +60,7 @@ public class MyHttpUtil {
         });
     }
 
-    public  void logInPost(String phone, String password, final Handler handler) {
+    public static void logInPost(String phone, String password, final Handler handler) {
         OkHttpClient client = new OkHttpClient();
 
         RequestBody requestBody = new FormBody.Builder()
@@ -89,13 +93,13 @@ public class MyHttpUtil {
     }
 
 
-    public void updateNamePost(int userId, String newName, final Handler handler) {
+    public static void updateNamePost(int userId, String newName, final Handler handler) {
 
         OkHttpClient client = new OkHttpClient();
 
         RequestBody requestBody = new FormBody.Builder()
                 .add("userId", String.valueOf(userId))
-                .add("password", newName)
+                .add("newName", newName)
                 .build();
 
         final Request request = new Request.Builder()
@@ -113,10 +117,10 @@ public class MyHttpUtil {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 Gson gson = new Gson();
-                boolean result = gson.fromJson(response.body().string(), Boolean.class);
+                OperateInfoDto operateInfoDto = gson.fromJson(response.body().string(), OperateInfoDto.class);
                 Message message = new Message();
                 message.what = MsgWhat.UPDATENAME;
-                message.obj = result;
+                message.obj = operateInfoDto;
                 handler.sendMessage(message);
             }
         });

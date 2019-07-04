@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.leon.lib.settingview.LSettingItem;
 import com.nam.android.happycloud.R;
+import com.nam.android.happycloud.entity.OperateInfoDto;
 import com.nam.android.happycloud.enums.MsgWhat;
 import com.nam.android.happycloud.login.LogInActivity_;
 import com.nam.android.happycloud.login.SignUpActivity_;
@@ -29,12 +30,14 @@ import com.nam.android.happycloud.utils.MyHttpUtil;
  */
 public class SettingActivity extends AppCompatActivity {
 
-    int userId;
-    String phone;
-    String userName;
-    String password;
+    private static final String TAG = "MyLog";
 
-    final Intent intent = getIntent();
+    private int userId;
+    private String phone;
+    private String userName;
+    private String password;
+
+    private Intent intent = null;
 
     final Handler settingHandler = new Handler() {
         @Override
@@ -43,10 +46,9 @@ public class SettingActivity extends AppCompatActivity {
             switch (msg.what) {
                 case MsgWhat.UPDATENAME:
                     // 设置昵称
-                    boolean result = (Boolean) msg.obj;
-                    if (result) {
-                        // TODO 待优化，发送全局广播，直接更新MainContentActivity
-                        Toast.makeText(getApplicationContext(), "设置成功，下次登录自动更新", Toast.LENGTH_LONG).show();
+                    OperateInfoDto updateResult = (OperateInfoDto) msg.obj;
+                    if (updateResult.getState().equals("1")) {
+                        Toast.makeText(getApplicationContext(), "昵称设置成功！", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Sorry, 设置失败！", Toast.LENGTH_LONG).show();
                     }
@@ -83,12 +85,24 @@ public class SettingActivity extends AppCompatActivity {
         LSettingItem settingInfo = (LSettingItem) findViewById(R.id.settingInfo);
         LSettingItem settingUnregist = (LSettingItem) findViewById(R.id.settingUnregist);
 
+        intent = getIntent();
+        userId = Integer.valueOf(intent.getStringExtra("userId"));
+        phone = intent.getStringExtra("phone");
+        userName = intent.getStringExtra("userName");
+        password = intent.getStringExtra("password");
+
         // 返回主界面
         settingToolBarBackIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingActivity.this, MainContentActivity.class);
-                startActivity(intent);
+                Intent intentBack = new Intent(SettingActivity.this, MainContentActivity.class);
+
+                intentBack.putExtra("userId", String.valueOf(userId));
+                intentBack.putExtra("phone", phone);
+                intentBack.putExtra("userName", userName);
+                intentBack.putExtra("password", password);
+
+                startActivity(intentBack);
             }
         });
 
@@ -98,7 +112,9 @@ public class SettingActivity extends AppCompatActivity {
             public void click(boolean isChecked) {
                 View view = LayoutInflater.from(SettingActivity.this)
                         .inflate(R.layout.update_name_item, null);
+
                 final EditText nameEt = view.findViewById(R.id.settingNameItm);
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
 
                 builder.setTitle("设置昵称");
@@ -110,7 +126,7 @@ public class SettingActivity extends AppCompatActivity {
                         String newName = nameEt.getText().toString().trim();
                         userId = Integer.parseInt(intent.getStringExtra("userId"));
 
-                        new MyHttpUtil().updateNamePost(userId, newName, settingHandler);
+                        MyHttpUtil.updateNamePost(userId, newName, settingHandler);
                     }
                 });
                 builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

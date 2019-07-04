@@ -39,32 +39,30 @@ public class LogInActivity extends Activity {
     @ViewById
     TextView signupTv;
 
+    private static final String TAG = "MyLog";
+
     Handler logInHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            switch (msg.what) {
-                case MsgWhat.LOGIN:
-                    UserInfoDto userInfoDto = (UserInfoDto) msg.obj;
-                    if (userInfoDto.isState() == false) {
-                        // 手机号为注册
-                        Toast.makeText(getApplicationContext(), "手机号未注册！", Toast.LENGTH_LONG).show();
-                        phoLoginEt.setText("");
-                        pwdLoginEt.setText("");
-                    } else {
-                        Intent intentLogin = new Intent(LogInActivity.this, MainContentActivity.class);
+            if (msg.what == MsgWhat.LOGIN) {
+                UserInfoDto userInfoDto = (UserInfoDto) msg.obj;
+                if (userInfoDto.isState() == false) {
+                    // 手机号未注册
+                    Toast.makeText(getApplicationContext(), "手机号未注册！", Toast.LENGTH_LONG).show();
+                    phoLoginEt.setText("");
+                    pwdLoginEt.setText("");
+                } else {
+                    Intent intentLogin = new Intent(LogInActivity.this, MainContentActivity.class);
 
-                        intentLogin.putExtra("userId", userInfoDto.getUserId());
-                        intentLogin.putExtra("phone", userInfoDto.getPhone());
-                        intentLogin.putExtra("userName", userInfoDto.getName());
-                        intentLogin.putExtra("password", userInfoDto.getPassword());
+                    intentLogin.putExtra("userId", String.valueOf(userInfoDto.getUserId()));
+                    intentLogin.putExtra("phone", userInfoDto.getPhone());
+                    intentLogin.putExtra("userName", userInfoDto.getName());
+                    intentLogin.putExtra("password", userInfoDto.getPassword());
 
-                        startActivity(intentLogin);
-                    }
-                    break;
-                default:
-                    break;
+                    startActivity(intentLogin);
+                }
             }
         }
     };
@@ -98,7 +96,7 @@ public class LogInActivity extends Activity {
             phoLoginEt.setText("");
         } else {
             // 提交登录请求
-            new MyHttpUtil().logInPost(phone, password, logInHandler);
+            MyHttpUtil.logInPost(phone, password, logInHandler);
         }
     }
 

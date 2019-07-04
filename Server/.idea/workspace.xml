@@ -6,23 +6,66 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f09f743-ed85-477f-8824-bc72d1480af5" name="Default Changelist" comment="">
+    <list default="true" id="4f09f743-ed85-477f-8824-bc72d1480af5" name="Default Changelist" comment="统一url">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/happycloud_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/dto/UserInfoDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-controller.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/dao/UserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/dto/UserInfoDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/cn/nam/android/happycloud/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/mapper/UserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-controller.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/c3p0-0.9.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/gson-2.8.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-annotations-2.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-core-2.8.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jackson-databind-2.8.11.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/json-20180813.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/logback-classic-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/logback-core-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mybatis-3.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mybatis-spring-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/mysql-connector-java-5.1.38.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/slf4j-api-1.7.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-aop-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-beans-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-context-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-core-4.3.23.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-expression-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-jdbc-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-test-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-tx-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-web-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/spring-webmvc-4.1.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/lib/standard-1.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/happycloud/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/cn/nam/android/happycloud/dao/UserDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/enums/WebUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/enums/WebUrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/LogInActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/LogInActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/login/SignUpActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/setting/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/setting/SettingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/start/MainContentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/start/MainContentActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/utils/WebUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/enums/WebUrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49d57942-ffef-4953-bcee-2050e8eed18e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49d57942-ffef-4953-bcee-2050e8eed18e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/utils/MyHttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/app/src/main/java/com/nam/android/happycloud/utils/MyHttpUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/UserInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/UserInfoDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sql/mysql_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/mysql_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/nam/android/happycloud/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Web/log/test.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,10 +113,52 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="462">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-645">
+              <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2049#2050#0" expanded="true" />
+                <element signature="e#2111#2112#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/OperateInfoDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding>
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,26 +169,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
               <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding>
-                <element signature="method#UserInfoDto#1;class#UserInfoDto#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1447">
-              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1236#1326#1" />
-                <element signature="method#updateUserName#0;class#UserService#0" />
-                <element signature="method#updateUserPhone#0;class#UserService#0" />
-                <element signature="method#updateUserPwd#0;class#UserService#0" />
-                <element signature="method#deleteUser#0;class#UserService#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +180,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -165,12 +230,13 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dao/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/sql/mysql_schema.sql" />
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/UserInfoDto.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/OperateInfoDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java" />
       </list>
     </option>
@@ -183,8 +249,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -195,6 +261,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,27 +373,12 @@
             </path>
             <path>
               <item name="HappyCloudServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HappyCloudServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HappyCloudServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,9 +557,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.UserDaoTest.addUserTest" />
       <item itemvalue="Tomcat Server.ximaliyun" />
       <item itemvalue="Tomcat Server.localTomcat" />
-      <item itemvalue="JUnit.UserDaoTest.addUserTest" />
     </list>
     <recent_temporary>
       <list>
@@ -562,7 +615,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5013889" side_tool="true" weight="0.20911528" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49722221" visible="true" weight="0.23659517" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49722221" weight="0.23994638" />
       <window_info id="Structure" order="4" sideWeight="0.50277776" side_tool="true" weight="0.20911528" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32916668" />
@@ -591,7 +644,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5013889" side_tool="true" weight="0.20911528" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49722221" visible="true" weight="0.211126" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49722221" visible="true" weight="0.23994638" />
       <window_info id="Structure" order="4" sideWeight="0.50277776" side_tool="true" weight="0.20911528" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32916668" />
@@ -599,14 +652,14 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32916668" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.33188406" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50067025" side_tool="true" weight="0.425" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="6" visible="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Database Console" order="6" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49932975" weight="0.40724638" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49932975" weight="0.47391304" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32916668" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.3289855" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" />
       <window_info anchor="bottom" id="File Transfer" order="15" weight="0.36666667" />
       <window_info anchor="right" id="Database" order="0" weight="0.14410187" />
@@ -624,7 +677,8 @@
     <MESSAGE value="实现服务端注册模块" />
     <MESSAGE value="使用Play框架实现后台管理员WEB界面" />
     <MESSAGE value="更改spring-controller.xml,web.xml,修改tomcat访问500错误;&#10;测试成功UserService.regist()" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改spring-controller.xml,web.xml,修改tomcat访问500错误;&#10;测试成功UserService.regist()" />
+    <MESSAGE value="统一url" />
+    <option name="LAST_COMMIT_MESSAGE" value="统一url" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
@@ -681,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
@@ -716,13 +763,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dao/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dao/UserDaoTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-135">
@@ -755,16 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -786,17 +817,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/cn/nam/android/happycloud/dao/UserDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1447">
-          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+        <state relative-caret-position="108">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1236#1326#1" />
-            <element signature="method#updateUserName#0;class#UserService#0" />
-            <element signature="method#updateUserPhone#0;class#UserService#0" />
-            <element signature="method#updateUserPwd#0;class#UserService#0" />
-            <element signature="method#deleteUser#0;class#UserService#0" />
           </folding>
         </state>
       </provider>
@@ -805,16 +831,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-645">
+          <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
           <folding>
-            <element signature="method#UserInfoDto#1;class#UserInfoDto#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/dto/OperateInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/nam/android/happycloud/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="462">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

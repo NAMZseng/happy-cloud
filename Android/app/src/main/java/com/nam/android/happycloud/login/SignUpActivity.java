@@ -21,7 +21,6 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-
 /**
  * 用户注册界面，注册成功后跳转至登陆界面
  *
@@ -40,33 +39,31 @@ public class SignUpActivity extends Activity {
     @ViewById
     TextView loginTv;
 
+    private static final String TAG = "MyLog";
+
     Handler SignUpHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            switch (msg.what) {
-                case MsgWhat.SIGNUP:
-                    UserInfoDto userInfo = (UserInfoDto) msg.obj;
-                    if (userInfo.isState() == false) {
-                        // 手机号重复，或注册失败
-                        Toast.makeText(getApplicationContext(), "该手机号已经注册", Toast.LENGTH_LONG).show();
-                        phoSignupEt.setText("");
-                    } else {
-                        Toast.makeText(getApplicationContext(), "注册成功！", Toast.LENGTH_LONG).show();// 跳转至主界面
+            if (msg.what == MsgWhat.SIGNUP) {
+                UserInfoDto userInfo = (UserInfoDto) msg.obj;
+                if (userInfo.isState() == false) {
+                    // 手机号重复，或注册失败
+                    Toast.makeText(getApplicationContext(), "该手机号已经注册", Toast.LENGTH_LONG).show();
+                    phoSignupEt.setText("");
+                } else {
+                    Toast.makeText(getApplicationContext(), "注册成功！", Toast.LENGTH_LONG).show();// 跳转至主界面
 
-                        Intent intentFileList = new Intent(SignUpActivity.this, MainContentActivity.class);
+                    Intent intentFileList = new Intent(SignUpActivity.this, MainContentActivity.class);
 
-                        intentFileList.putExtra("userId", userInfo.getUserId());
-                        intentFileList.putExtra("phone", userInfo.getPhone());
-                        intentFileList.putExtra("userName", userInfo.getName());
-                        intentFileList.putExtra("password", userInfo.getPassword());
+                    intentFileList.putExtra("userId", String.valueOf(userInfo.getUserId()));
+                    intentFileList.putExtra("phone", userInfo.getPhone());
+                    intentFileList.putExtra("userName", userInfo.getName());
+                    intentFileList.putExtra("password", userInfo.getPassword());
 
-                        startActivity(intentFileList);
-                    }
-                    break;
-                default:
-                    break;
+                    startActivity(intentFileList);
+                }
             }
         }
     };
@@ -97,7 +94,7 @@ public class SignUpActivity extends Activity {
             rePwdSignupEt.setText("");
         } else {
             // 向服务器发送注册的post请求
-           new MyHttpUtil().signUpPost(phone, password, SignUpHandler);
+            MyHttpUtil.signUpPost(phone, password, SignUpHandler);
         }
     }
 
