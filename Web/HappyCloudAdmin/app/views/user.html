@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <title>User</title>
@@ -29,6 +29,9 @@
                     <li class="${request.controller == 'user_infos' ? 'selected' : ''}">
                         <a href="@{user_infos.list()}">用户信息</a>
                     </li>
+                    <li class="${request.controller == 'user_upload_files' ? 'selected' : ''}">
+                        <a href="@{user_upload_files.list()}">用户文件上传记录</a>
+                    </li>
                     <li class="${request.controller == 'user_download_files' ? 'selected' : ''}">
                         <a href="@{user_download_files.list()}">用户文件下载记录</a>
                     </li>
@@ -36,7 +39,7 @@
                         <a href="@{user_share_files.list()}">用户文件分享记录</a>
                     </li>
                     <li>
-                         <a target="_blank" href="http://39.106.214.230:9870">HDFS</a>
+                         <a target="_blank" href="http://192.168.220.100:9870">HDFS</a>
                     </li>
                     
                     #{/secure.check}

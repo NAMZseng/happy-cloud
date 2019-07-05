@@ -23,10 +23,25 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="120dp"
-            android:text="                      欢喜云盘\n\n\n\n一款基于Hadoop的分布式网盘\n\n              By Nanrong Zeng\n\n\n\n\n"
-            >
-        </TextView>
-        
+            android:text="欢喜云盘"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="190dp"
+            android:text="一款基于Hadoop的分布式存储网盘" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="220dp"
+            android:text="Nanrong Zeng\n\n\n\n" />
     </RelativeLayout>
 
 </LinearLayout>

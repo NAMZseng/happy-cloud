@@ -35,6 +35,7 @@ public class SettingActivity extends AppCompatActivity {
     private int userId;
     private String phone;
     private String userName;
+    private String tempName;
     private String password;
 
     private Intent intent = null;
@@ -50,6 +51,7 @@ public class SettingActivity extends AppCompatActivity {
                     // 设置昵称
                     if (updateResult.getState().equals("1")) {
                         Toast.makeText(getApplicationContext(), "昵称设置成功！", Toast.LENGTH_LONG).show();
+                        userName = tempName;
                     } else {
                         Toast.makeText(getApplicationContext(), "Sorry, 设置失败！", Toast.LENGTH_LONG).show();
                     }
@@ -76,7 +78,7 @@ public class SettingActivity extends AppCompatActivity {
                         Intent intentSigIn = new Intent(SettingActivity.this, SignUpActivity_.class);
                         startActivity(intentSigIn);
                     } else if (updateResult.getState().equals("-1")) {
-                        Toast.makeText(getApplicationContext(), "账号验证错误！", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "手机或密码错误！", Toast.LENGTH_LONG).show();
                     }
                     break;
                 default:
@@ -139,7 +141,7 @@ public class SettingActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         String newName = nameEt.getText().toString().trim();
-
+                        tempName = newName;
                         MyHttpUtil.updateNamePost(userId, newName, settingHandler);
                     }
                 });

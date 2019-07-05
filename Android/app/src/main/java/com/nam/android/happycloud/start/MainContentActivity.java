@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.icu.util.EthiopicCalendar;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -24,9 +26,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.leon.lfilepickerlibrary.LFilePicker;
+import com.mob.tools.utils.FileUtils;
 import com.nam.android.happycloud.R;
+import com.nam.android.happycloud.entity.OperateInfoDto;
+import com.nam.android.happycloud.enums.MsgWhat;
 import com.nam.android.happycloud.login.LogInActivity_;
 import com.nam.android.happycloud.setting.SettingActivity;
+import com.nam.android.happycloud.utils.MyHttpUtil;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * 应用主界面，展示用户云盘中的文件
@@ -37,6 +47,7 @@ public class MainContentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MyLog";
+    private static final int REQUESTCODE_FROM_ACTIVITY = 1000;
 
     private FloatingActionButton actionUploadFile = null;
     private FloatingActionButton actionNewFloder = null;
@@ -48,6 +59,26 @@ public class MainContentActivity extends AppCompatActivity
     private String password;
 
     private Intent intent = null;
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            switch (msg.what) {
+                case MsgWhat.UPLOAD:
+                    OperateInfoDto result = (OperateInfoDto) msg.obj;
+                    if (result.getState().equals(true)) {
+                        Toast.makeText(getApplicationContext(), "上传完成", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "上传失败", Toast.LENGTH_LONG).show();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +97,10 @@ public class MainContentActivity extends AppCompatActivity
         actionUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO 上传文件
-                Toast.makeText(getApplicationContext(), "上传文件", Toast.LENGTH_SHORT).show();
+                new LFilePicker()
+                        .withActivity(MainContentActivity.this)
+                        .withRequestCode(REQUESTCODE_FROM_ACTIVITY)
+                        .start();
             }
         });
 
@@ -96,6 +129,22 @@ public class MainContentActivity extends AppCompatActivity
 
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUESTCODE_FROM_ACTIVITY) {
+                // 获取所选文件绝对路径
+                List<String> list = data.getStringArrayListExtra("paths");
+                String filePath = list.get(0);
+                File file = new File(filePath);
+                String uploadTime = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
+
+                MyHttpUtil.uploadFile(file, userId, uploadTime, handler);
+            }
+        }
     }
 
     @Override

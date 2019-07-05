@@ -927,91 +927,62 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="234" parent="3" name="hibernate_sequence">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="235" parent="3" name="user_download_file">
+    <table id="234" parent="3" name="user_download_file">
       <Comment>用户下载文件信息表</Comment>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="236" parent="3" name="user_info">
+    <table id="235" parent="3" name="user_info">
       <Comment>用户信息表</Comment>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="237" parent="3" name="user_share_file">
+    <table id="236" parent="3" name="user_share_file">
       <Comment>用户分享文件信息表</Comment>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="238" parent="3" name="user_upload_file">
+    <table id="237" parent="3" name="user_upload_file">
       <Comment>用户上传文件信息表</Comment>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <column id="239" parent="234" name="next_val">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="235" name="user_id">
+    <column id="238" parent="234" name="user_id">
       <Position>1</Position>
       <Comment>用户ID，引用于user_info</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="235" name="file_id">
+    <column id="239" parent="234" name="id">
       <Position>2</Position>
       <Comment>文件ID,引用与user_upload_file</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="235" name="file_name">
+    <column id="240" parent="234" name="file_name">
       <Position>3</Position>
       <Comment>上传文件的名称</Comment>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="235" name="file_type">
+    <column id="241" parent="234" name="download_time">
       <Position>4</Position>
-      <Comment>文件类型，txt,pdf,png,jpg,mp4,mp3...</Comment>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="244" parent="235" name="download_time">
-      <Position>5</Position>
       <Comment>最近一次的文件下载时间</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="235" name="download_count">
-      <Position>6</Position>
-      <Comment>文件下载次数，可用于统计用户感兴趣的文件类型，制作用户活动图表以及文件下载次数统计</Comment>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="246" parent="235" name="id">
-      <Position>7</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="247" parent="235" name="idx_download_time">
+    <index id="242" parent="234" name="idx_download_time">
       <ColNames>download_time</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="248" parent="235" name="PRIMARY">
+    <key id="243" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>user_id
-file_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="249" parent="236" name="user_id">
+    <column id="244" parent="235" name="user_id">
       <Position>1</Position>
       <Comment>用户ID</Comment>
       <DataType>bigint(20)|0s</DataType>
@@ -1019,28 +990,28 @@ file_id</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="236" name="name">
+    <column id="245" parent="235" name="name">
       <Position>2</Position>
       <Comment>用户昵称</Comment>
       <DataType>varchar(64)|0s</DataType>
       <DefaultExpression>&apos;friend&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="236" name="phone">
+    <column id="246" parent="235" name="phone">
       <Position>3</Position>
       <Comment>用户登录手机号</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="236" name="password">
+    <column id="247" parent="235" name="password">
       <Position>4</Position>
       <Comment>用户登录密码</Comment>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="236" name="create_time">
+    <column id="248" parent="235" name="create_time">
       <Position>5</Position>
       <Comment>用户创建时间</Comment>
       <DataType>timestamp|0s</DataType>
@@ -1048,87 +1019,66 @@ file_id</ColNames>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="254" parent="236" name="idx_phone">
+    <index id="249" parent="235" name="idx_phone">
       <ColNames>phone</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="255" parent="236" name="idx_create_time">
+    <index id="250" parent="235" name="idx_create_time">
       <ColNames>create_time</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="256" parent="236" name="PRIMARY">
+    <key id="251" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="257" parent="237" name="user_id">
+    <column id="252" parent="236" name="user_id">
       <Position>1</Position>
       <Comment>用户ID，引用于user_info</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="237" name="file_id">
+    <column id="253" parent="236" name="id">
       <Position>2</Position>
       <Comment>文件ID,引用与user_upload_file</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="237" name="file_name">
+    <column id="254" parent="236" name="file_name">
       <Position>3</Position>
       <Comment>上传文件的名称</Comment>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="237" name="file_type">
+    <column id="255" parent="236" name="share_time">
       <Position>4</Position>
-      <Comment>文件类型，txt,pdf,png,jpg,mp4,mp3...</Comment>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="261" parent="237" name="share_time">
-      <Position>5</Position>
       <Comment>最近一次文件分享的时间</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="237" name="share_count">
-      <Position>6</Position>
-      <Comment>文件分享次数，可用于统计用户感兴趣的文件类型，制作用户活动图表以及文件下载次数统计</Comment>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="263" parent="237" name="id">
-      <Position>7</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="264" parent="237" name="idx_share_time">
+    <index id="256" parent="236" name="idx_share_time">
       <ColNames>share_time</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="265" parent="237" name="PRIMARY">
+    <key id="257" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>user_id
-file_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="266" parent="238" name="user_id">
+    <column id="258" parent="237" name="user_id">
       <Position>1</Position>
       <Comment>用户ID, 引用于user_info</Comment>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="238" name="file_id">
+    <column id="259" parent="237" name="id">
       <Position>2</Position>
       <Comment>文件ID</Comment>
       <DataType>bigint(20)|0s</DataType>
@@ -1136,62 +1086,46 @@ file_id</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="238" name="file_name">
+    <column id="260" parent="237" name="file_name">
       <Position>3</Position>
       <Comment>上传文件的名称</Comment>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="238" name="file_type">
+    <column id="261" parent="237" name="file_state">
       <Position>4</Position>
-      <Comment>文件类型，txt,pdf,png,jpg,mp4,mp3...</Comment>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="270" parent="238" name="upload_dir">
-      <Position>5</Position>
-      <Comment>文件上传到网盘的目录</Comment>
-      <DataType>varchar(64)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="271" parent="238" name="file_state">
-      <Position>6</Position>
       <Comment>文件状态，1：正常，0：放入回收站， -1：彻底清除</Comment>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="238" name="upload_time">
-      <Position>7</Position>
-      <Comment>文件上传时间</Comment>
-      <DataType>timestamp|0s</DataType>
+    <column id="262" parent="237" name="upload_time">
+      <Position>5</Position>
+      <Comment>文件上传时间 yyyyMMddHHmmss</Comment>
+      <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="238" name="change_time">
-      <Position>8</Position>
-      <Comment>文件修改时间</Comment>
-      <DataType>timestamp|0s</DataType>
+    <column id="263" parent="237" name="change_time">
+      <Position>6</Position>
+      <Comment>文件修改时间 yyyyMMddHHmmss</Comment>
+      <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="274" parent="238" name="idx_upload_time">
+    <index id="264" parent="237" name="idx_upload_time">
       <ColNames>upload_time</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="275" parent="238" name="idx_change_time">
+    <index id="265" parent="237" name="idx_change_time">
       <ColNames>change_time</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="276" parent="238" name="PRIMARY">
+    <key id="266" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>file_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

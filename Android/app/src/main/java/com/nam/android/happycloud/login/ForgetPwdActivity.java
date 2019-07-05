@@ -1,5 +1,7 @@
 package com.nam.android.happycloud.login;
 
+import com.nam.android.happycloud.entity.OperateInfoDto;
+import com.nam.android.happycloud.enums.MsgWhat;
 import com.nam.android.happycloud.start.*;
 
 import android.app.Activity;
@@ -9,12 +11,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.nam.android.happycloud.R;
 import com.nam.android.happycloud.start.MainContentActivity;
+import com.nam.android.happycloud.utils.MyHttpUtil;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -44,7 +48,8 @@ public class ForgetPwdActivity extends Activity {
     @ViewById
     Button confirmForgetBtn;
 
-    private EventHandler eventHandler= new EventHandler() {
+    // 短信密码找回相关Handler处理事件
+    private EventHandler eventHandler = new EventHandler() {
         @Override
         public void afterEvent(int event, int result, Object data) {
             // afterEvent会在子线程被调用，因此如果后续有UI相关操作，需要将数据发送到UI线程
@@ -69,12 +74,10 @@ public class ForgetPwdActivity extends Activity {
                     } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                         // 验证码输入正确
                         if (result == SMSSDK.RESULT_COMPLETE) {
-                            Toast.makeText(getApplicationContext(), "修改成功！",
-                                    Toast.LENGTH_LONG).show();
-                            // TODO 更新用户信息到数据库
-                            // 跳转主界面
-                            Intent intentFileList = new Intent(ForgetPwdActivity.this, MainContentActivity.class);
-                            startActivity(intentFileList);
+                            // 向服务器提交重置密码Post请求
+                            String userPhone = phoForgetEt.getText().toString().trim();
+                            String userPwd = pwdForgetEt.getText().toString().trim();
+                            MyHttpUtil.forgetPwdPost(userPhone, userPwd, pwdHandler);
                         } else {
                             Toast.makeText(getApplicationContext(), "验证码错误，请重新获取",
                                     Toast.LENGTH_LONG).show();
@@ -85,6 +88,31 @@ public class ForgetPwdActivity extends Activity {
                     return false;
                 }
             }).sendMessage(msg);
+        }
+    };
+
+    // 重置密码请求修改Handler处理事件
+    private final Handler pwdHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            if (msg.what == MsgWhat.FORGETPWD) {
+                OperateInfoDto result = (OperateInfoDto) msg.obj;
+                if (result.getState().equals("1")) {
+                    Toast.makeText(getApplicationContext(), "密码重置成功！", Toast.LENGTH_LONG).show();
+
+                    // 跳转登录页面
+                    Intent intentLogIn = new Intent(ForgetPwdActivity.this, LogInActivity_.class);
+                    startActivity(intentLogIn);
+                } else if (result.getState().equals("-1")) {
+                    Toast.makeText(getApplicationContext(), "手机号未注册！", Toast.LENGTH_LONG).show();
+                    phoForgetEt.setText("");
+                    mesForgetEt.setText("");
+                    pwdForgetEt.setText("");
+                    rePwdForgetEt.setText("");
+                }
+            }
         }
     };
 
@@ -99,17 +127,7 @@ public class ForgetPwdActivity extends Activity {
     @Click(R.id.getMesForgetBtn)
     public void getMessageCode() {
         String phone = phoForgetEt.getText().toString();
-
-        // TODO 查询数据库，检验该手机号是否已注册
-        boolean isPhoneRegisted = true;
-        // 手机号已注册，可进行验证
-        if (isPhoneRegisted) {
-            SMSSDK.getVerificationCode("86", phone);
-        } else {
-            Toast.makeText(getApplicationContext(), "手机号未注册！",
-                    Toast.LENGTH_LONG).show();
-            phoForgetEt.setText("");
-        }
+        SMSSDK.getVerificationCode("86", phone);
     }
 
     @Click(R.id.confirmForgetBtn)
@@ -125,8 +143,7 @@ public class ForgetPwdActivity extends Activity {
                     phoForgetEt.getText().toString(),
                     mesForgetEt.getText().toString());
         } else {
-            Toast.makeText(getApplicationContext(), "两次密码不一致，请重新输入",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "两次密码不一致，请重新输入", Toast.LENGTH_LONG).show();
             pwdForgetEt.setText("");
             rePwdForgetEt.setText("");
         }

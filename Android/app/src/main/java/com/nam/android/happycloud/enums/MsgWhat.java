@@ -12,4 +12,7 @@ public class MsgWhat {
     public static final int UPDATEPHONE = 0x14;
     public static final int UPDATEPWD = 0x15;
     public static final int SIGNOUT = 0x16;
+    public static final int FORGETPWD = 0x17;
+    public static final int UPLOAD = 0x18;
+
 }

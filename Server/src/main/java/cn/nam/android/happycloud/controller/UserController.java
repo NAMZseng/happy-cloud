@@ -1,9 +1,9 @@
 package cn.nam.android.happycloud.controller;
 
 /**
- * 服务端与安卓端交互模块
+ * 用户管理交互模块
  *
- * @author Nanrong Zeng
+ * @author Nanrong Zen/g
  * @version 1.0
  */
 
@@ -22,7 +22,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
     /**
      * 注册模块
      *
@@ -35,6 +34,12 @@ public class UserController {
 
         return userService.signUp(phone, password);
     }
+//    @RequestMapping(value = "/signup")
+//    public String signUp(/*@RequestParam("phone") String phone,
+//                         @RequestParam("password") String password*/) {
+//
+//        return "Hello";
+//    }
 
     @RequestMapping(value = "/login")
     public UserInfoDto logIn(@RequestParam("phone") String phone,
@@ -72,6 +77,13 @@ public class UserController {
         return operateInfoDto;
     }
 
+    @RequestMapping(value = "/forgetpwd")
+    public OperateInfoDto forgetPwd(@RequestParam("phone") String phone,
+                                    @RequestParam("newPassword") String newPassword) {
+        int result = userService.forgetPwd(phone, newPassword);
+        OperateInfoDto operateInfoDto = new OperateInfoDto(result + "");
+        return operateInfoDto;
+    }
 
     @RequestMapping(value = "/signout")
     public OperateInfoDto signOut(@RequestParam("phone") String phone,

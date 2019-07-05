@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.nam.android.happycloud.dao.MyFileDao">
+
+    <resultMap id="upLoadFile" type="cn.nam.android.happycloud.entity.MyFile">
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="fileName" property="fileName" />
+        <result column="fileState" property="fileState" />
+        <result column="uploadTime" property="uploadTime" />
+        <result column="changeTime" property="changeTime" />
+    </resultMap>
+
+    <insert id="upLoadFile">
+        INSERT INTO user_upload_file(user_id, file_name, upload_time, change_time)
+        VALUES (#{user_id}, #{file_name}, #{upload_time}, #{upload_time})
+    </insert>
+    
+    <select id="findSUerFiles" resultMap="upLoadFile">
+        SELECT * FROM user_upload_file
+        WHERE user_id = #{user_id}
+    </select>
+</mapper>

@@ -120,6 +120,16 @@ public class UserService {
         }
     }
 
+    public int forgetPwd(String phone, String newPassword) {
+        User user = userDao.findUser(phone);
+        if (user == null) {
+            // 手机号未注册
+            return -1;
+        } else {
+            return userDao.updateUserPwd(phone, newPassword);
+        }
+    }
+
     /**
      * 注销用户
      *

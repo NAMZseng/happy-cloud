@@ -1,15 +1,16 @@
 #{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.list.title', type.name) /}
 
 <div id="crudList" class="${type.name}">
 
     <h2 id="crudListTitle">&{'crud.list.title', type.name}</h2>
 
     <div id="crudListSearch">
-        #{crud.search  fields:['id', 'user_id'] /}
+        #{crud.search  fields:['id', 'user_id', 'file_name'] /}
     </div>
 
     <div id="crudListTable">
-        #{crud.table fields:['id', 'user_id', 'file_name', 'share_time']}
+        #{crud.table fields:['id', 'user_id', 'file_name', 'file_state', 'upload_time', 'change_time']}
             
         #{/crud.table}
     </div>

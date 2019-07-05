@@ -5,11 +5,11 @@
     <h2 id="crudListTitle">&{'crud.list.title', type.name}</h2>
 
     <div id="crudListSearch">
-        #{crud.search fields:['file_id', 'user_id'] /}
+        #{crud.search fields:['id', 'user_id'] /}
     </div>
 
     <div id="crudListTable">
-        #{crud.table fields:['user_id', 'file_id', 'file_name', 'file_type', 'download_time' ,'share_count']}
+        #{crud.table fields:['id', 'user_id', 'file_name', 'download_time']}
             
         #{/crud.table}
     </div>
